@@ -1,17 +1,17 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'spreedly/version'
+require 'spreedly/subscriptions/version'
 
 Gem::Specification.new do |s|
-  s.name        = "spreedly"
-  s.version     = Spreedly::VERSION
+  s.name        = "spreedly_subscriptions"
+  s.version     = Spreedly::Subscriptions::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Spreedly"]
   s.email       = ["nathaniel@spreedly.com"]
-  s.homepage    = "https://github.com/spreedly/spreedly-gem"
+  s.homepage    = "https://github.com/spreedly/spreedly_subscriptions_gem"
   s.summary     = "Provides a Ruby wrapper for the Spreedly Subscriptions API."
-  s.description = "The Spreedly gem provides a convenient Ruby wrapper for the Spreedly Subscriptions API."
+  s.description = "This gem provides a convenient Ruby wrapper for the Spreedly Subscriptions API."
   s.license     = "MIT"
 
   s.required_rubygems_version = ">= 1.8"

@@ -1,10 +1,10 @@
 # Spreedly gem
 
-* https://github.com/spreedly/spreedly-gem
+* https://github.com/spreedly/spreedly_subscriptions_gem
 
 ## Description
 
-The Spreedly gem provides a convenient Ruby wrapper for the Spreedly
+The spreedly_subscriptions gem provides a convenient Ruby wrapper for the Spreedly
 Subscriptions API.
 
 ## Features
@@ -17,17 +17,17 @@ Subscriptions API.
 ## Synopsis
 
     # For real
-    require 'spreedly'
-    Spreedly.configure('site short name', 'crazy hash token')
-    url = Spreedly.subscribe_url('customer id', 'plan id')
-    subscriber = Spreedly::Subscriber.find('customer id')
+    require 'spreedly/subscriptions'
+    Spreedly::Subscriptions.configure('site short name', 'crazy hash token')
+    url = Spreedly::Subscriptions.subscribe_url('customer id', 'plan id')
+    subscriber = Spreedly::Subscriptions::Subscriber.find('customer id')
     subscriber.active?
 
     # For fast tests
-    require 'spreedly/mock'
-    Spreedly.configure('site short name', 'crazy hash token')
-    url = Spreedly.subscribe_url('customer id', 'plan id')
-    subscriber = Spreedly::Subscriber.find('customer id')
+    require 'spreedly/subscriptions/mock'
+    Spreedly::Subscriptions.configure('site short name', 'crazy hash token')
+    url = Spreedly::Subscriptions.subscribe_url('customer id', 'plan id')
+    subscriber = Spreedly::Subscriptions::Subscriber.find('customer id')
     subscriber.active?
 
 Yup, they're exactly the same except for the require and the speed!
@@ -39,4 +39,4 @@ Yup, they're exactly the same except for the require and the speed!
 
 ## Install
 
-    $ gem install spreedly
+    $ gem install spreedly_subscriptions
