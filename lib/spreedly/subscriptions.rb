@@ -111,7 +111,7 @@ module Spreedly
         optional_attrs = args.last.is_a?(::Hash) ? args.pop : {}
         email, screen_name = args
         subscriber = {:customer_id => id, :email => email, :screen_name => screen_name}.merge(optional_attrs)
-        result = Spreedly::Subscriptions.post('/subscribers.xml', :body => Spreedly.to_xml_params(:subscriber => subscriber))
+        result = Spreedly::Subscriptions.post('/subscribers.xml', :body => Spreedly::Subscriptions.to_xml_params(:subscriber => subscriber))
         case result.code.to_s
         when /2../
           new(result['subscriber'])
@@ -158,7 +158,7 @@ module Spreedly
         params[:feature_level] = feature_level if feature_level
         raise "Feature level is required to comp an inactive subscriber" if !active? and !feature_level
         endpoint = (active? ? "complimentary_time_extensions" : "complimentary_subscriptions")
-        result = Spreedly::Subscriptions.post("/subscribers/#{id}/#{endpoint}.xml", :body => Spreedly.to_xml_params(endpoint[0..-2] => params))
+        result = Spreedly::Subscriptions.post("/subscribers/#{id}/#{endpoint}.xml", :body => Spreedly::Subscriptions.to_xml_params(endpoint[0..-2] => params))
         case result.code.to_s
         when /2../
         when '404'
@@ -206,7 +206,7 @@ module Spreedly
       # Update a Subscriber
       # usage: @subscriber.update(:email => email, :screen_name => screen_name)
       def update(args)
-        result = Spreedly::Subscriptions.put("/subscribers/#{id}.xml", :body => Spreedly.to_xml_params(:subscriber => args))
+        result = Spreedly::Subscriptions.put("/subscribers/#{id}.xml", :body => Spreedly::Subscriptions.to_xml_params(:subscriber => args))
 
         case result.code.to_s
         when /2../
