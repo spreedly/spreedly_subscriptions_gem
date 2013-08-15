@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.1
+
+* Fix to_xml_params method [bradleypriest]
+
+## 2.0.0
+
+* New name for the gem
+
 ## 1.4.0
 
 * Add accessor for invoices
