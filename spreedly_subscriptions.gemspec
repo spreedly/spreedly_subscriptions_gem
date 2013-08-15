@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.8"
 
+  s.add_development_dependency 'bundler', '~> 1.3'
+  s.add_development_dependency 'rake'
   s.add_dependency "httparty"
   s.add_development_dependency "shoulda"
   s.add_development_dependency "mechanize", "~> 2.5.1"

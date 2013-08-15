@@ -3,3 +3,5 @@ doc
 pkg
 test/test_site.yml
 *.gem
+vendor/ruby
+.bundle
