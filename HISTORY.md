@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.2
+
+* Adjust url to point to https://subs.pinpayments.com
+
 ## 2.0.1
 
 * Fix to_xml_params method [bradleypriest]

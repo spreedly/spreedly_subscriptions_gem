@@ -40,7 +40,7 @@ module Spreedly
 
     # Call this before you start using the API to set things up.
     def self.configure(site_name, token)
-      base_uri "https://spreedly.com/api/v4/#{site_name}"
+      base_uri "https://subs.pinpayments.com/api/v4/#{site_name}"
       basic_auth token, 'X'
       @site_name = site_name
     end
