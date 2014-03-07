@@ -115,25 +115,25 @@ class SpreedlySubscriptionsGemTest < Test::Unit::TestCase
     end
 
     should "generate a subscribe url" do
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1/Joe%20Bob",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1/Joe%20Bob",
         Spreedly::Subscriptions.subscribe_url('joe', '1', :screen_name => "Joe Bob")
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1",
         Spreedly::Subscriptions.subscribe_url('joe', '1')
     end
 
     should "generate a pre-populated subscribe url" do
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1?email=joe.bob@test.com&first_name=Joe&last_name=Bob",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1?email=joe.bob@test.com&first_name=Joe&last_name=Bob",
         Spreedly::Subscriptions.subscribe_url('joe', '1', :email => "joe.bob@test.com", :first_name => "Joe", :last_name => "Bob")
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1?first_name=Joe&last_name=Bob",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1?first_name=Joe&last_name=Bob",
         Spreedly::Subscriptions.subscribe_url('joe', '1', :first_name => "Joe", :last_name => "Bob")
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1?return_url=http://stuffo.example.com",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscribers/joe/subscribe/1?return_url=http://stuffo.example.com",
         Spreedly::Subscriptions.subscribe_url('joe', '1', :return_url => 'http://stuffo.example.com')
     end
 
     should "generate an edit subscriber url" do
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscriber_accounts/zetoken",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscriber_accounts/zetoken",
         Spreedly::Subscriptions.edit_subscriber_url('zetoken')
-      assert_equal "https://spreedly.com/#{Spreedly::Subscriptions.site_name}/subscriber_accounts/zetoken?return_url=http://stuffo.example.com",
+      assert_equal "https://subs.pinpayments.com/#{Spreedly::Subscriptions.site_name}/subscriber_accounts/zetoken?return_url=http://stuffo.example.com",
         Spreedly::Subscriptions.edit_subscriber_url('zetoken', 'http://stuffo.example.com')
     end
 
