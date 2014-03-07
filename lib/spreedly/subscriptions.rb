@@ -4,7 +4,7 @@ require 'httparty'
 raise "Mock Spreedly already required!" if defined?(Spreedly::MOCK)
 
 =begin rdoc
-Provides a convenient wrapper around the https://spreedly.com/info/integration
+Provides a convenient wrapper around the https://subs.pinpayments.com/info/integration
 API.  Instead of mucking around with http you can just
 Spreedly::Subscriptions.configure and Spreedly::Subscriber.find. Much of the
 functionality is hung off of the Spreedly::Subscriptions::Subscriber class, and there's also a

@@ -25,7 +25,7 @@ module Spreedly
       screen_name = options.delete(:screen_name)
       params = %w(email first_name last_name return_url).select{|e| options[e.to_sym]}.collect{|e| "#{e}=#{options[e.to_sym]}"}.join('&')
 
-      url = "https://spreedly.com/#{site_name}/subscribers/#{id}/subscribe/#{plan}"
+      url = "https://subs.pinpayments.com/#{site_name}/subscribers/#{id}/subscribe/#{plan}"
       url << "/#{screen_name}" if screen_name
       url << '?' << params unless params == ''
 
@@ -36,7 +36,7 @@ module Spreedly
     # token is returned with the subscriber info (i.e. by
     # Subscriber.find).
     def self.edit_subscriber_url(token, return_url = nil)
-      "https://spreedly.com/#{site_name}/subscriber_accounts/#{token}" +
+      "https://subs.pinpayments.com/#{site_name}/subscriber_accounts/#{token}" +
       if return_url
         "?return_url=#{URI.escape(return_url)}"
       else
