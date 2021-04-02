@@ -1,3 +1,5 @@
+# DEPRECATED - Spreedly no longer offers support for subscriptions.
+
 # Spreedly gem
 
 * https://github.com/spreedly/spreedly_subscriptions_gem
